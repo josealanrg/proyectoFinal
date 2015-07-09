@@ -25,7 +25,7 @@
       <input type="password" id="txtClave" class="form-control" placeholder="Contraseña">
       <button id="btnEntrar" class="btn btn-warning btn-lg btn-block">
         Entrar
-        <span class="glyphicon glyphicon-credit-card"></span>
+        <span class="glyphicon glyphicon-user"></span>
       </button>
     </div>
   </div>
