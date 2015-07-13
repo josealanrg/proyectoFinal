@@ -18,6 +18,8 @@
       <ul class="nav navbar-nav">
         <li ><a href="colaboradoresadmin">Colaboradores <span class="sr-only">(current)</span></a></li>
         <li><a href="tareasadmin">Tareas</a></li>
+
+        <li><a href="registrarproyecto">Nuevo Proyecto</a></li>
         
       </ul>
       
@@ -42,7 +44,7 @@
 
      @yield('muestratareas')
 
-    
+    @yield('registrarproyecto')
   </div>
   </div>
 

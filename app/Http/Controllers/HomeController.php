@@ -60,9 +60,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function muestraForm()
     {
-        //
+        return view::make('registrarproyecto');
     }
 
     /**
