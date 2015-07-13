@@ -1,43 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title> Examen</title>
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="css/estilos.css">
+@extends('base')
 
-</head>
-<body>
-    
-        
+@section('welcome')
 
-  <figure>
-<img src="banner.png">
-</figure>
+<div class="jumbotron">
+  <h1>Bienvenido a Task Manager!</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 
-
-<div class="panel panel-primary" id="panelEntrada">
-    <div class="panel-heading">
-      <h3 class="panel-title">Proporcione sus datos</h3>
-    </div>
-    <div class="panel-body" >
-      <input type="text" id="txtUsuario" class="form-control" placeholder="Usuario" autofocus>
-      <input type="password" id="txtClave" class="form-control" placeholder="Contraseña">
-      <button id="btnEntrar" class="btn btn-warning btn-lg btn-block">
-        Entrar
-        <span class="glyphicon glyphicon-user"></span>
-      </button>
-    </div>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+  <a id="botonIngresar" class="btn btn-success " href="auth/login" role="button">Iniciar Sesion</a> 
   </div>
-    <footer>
-        <small>
-            DR &copy; Programación Web 2014.
-        </small>
-    </footer>
-</body>
-</html>
-
-
+@stop
 
 
 
