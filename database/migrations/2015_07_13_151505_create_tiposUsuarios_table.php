@@ -3,14 +3,15 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoUsuariosTable extends Migration
+class CreateTiposUsuariosTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-     public function up()
+
+    public function up()
     {
         Schema::create('tiposUsuarios', function(Blueprint $table)
         {

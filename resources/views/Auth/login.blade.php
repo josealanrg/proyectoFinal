@@ -2,25 +2,36 @@
 
 @section('login')
 
-<form method="POST" action="auth/login">
-    {!! csrf_field() !!}
 
-    <div>
-        Usuario
-        <input type="text" name="usuario" value="{{ old('usuario') }}">
-    </div>
 
-    <div>
-        Password
-        <input type="password" name="password" id="password">
-    </div>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Task Manager</title>
+</head>
+<body>
+    <div class="container">
+        {!! Form::open(['url' => 'homeadmin']) !!}
 
-    <div>
-        <input type="checkbox" name="remember"> Recordarme
-    </div>
+            @if(Session::has('error_message'))
+                {!! Session::get('error_message') !!}
+            @endif
 
-    <div>
-        <button type="submit">Entrar</button>
+            <h2>Proporcione los Datos</h2>
+
+            {!! Form::label('usuario', 'Nombre de Usuario') !!}
+            {!! Form::text('usuario') !!}
+
+            {!! Form::label('password', 'Contraseña') !!}
+            {!! Form::password('password') !!}
+
+          
+            
+            {!! Form::submit('Entrar', ['class' => 'btn btn-primary btn-block']) !!}
+    
+        {!! Form::close() !!}
     </div>
-</form>
+</body>
+</html>
 @stop
