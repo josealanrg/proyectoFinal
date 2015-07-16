@@ -19,6 +19,14 @@
  
             {!! Form::label('descripcion', 'Descripcion del Proyecto') !!}
             {!! Form::text('descripcion') !!} <br>
+
+            
+                <select name="id_usuario">
+            @foreach($usuarios as $usuario)
+            	<option value="{{$usuario->id_usuario}}" > {{$usuario->usuario}}</option>
+            @endforeach
+            	</select>
+
  
             
             

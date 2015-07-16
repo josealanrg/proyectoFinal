@@ -10,7 +10,7 @@
   </div>
   <div class="panel-body">
     <b>Descripcion :</b> {{ $proyecto->descripcion}}<br>
-    <b>Fecha de Entrega :</b> {{ $proyecto->fechaEntrega}}
+    <b>Fecha de Entrega :</b> {{ $proyecto->fechaEntrega}}  <br>
   </div>
 </div>
 

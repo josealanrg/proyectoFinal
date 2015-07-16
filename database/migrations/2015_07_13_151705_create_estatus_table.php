@@ -10,7 +10,7 @@ class CreateEstatusTable extends Migration
      *
      * @return void
      */
-    public function up()
+  public function up()
     {
         Schema::create('estatus', function(Blueprint $table)
         {

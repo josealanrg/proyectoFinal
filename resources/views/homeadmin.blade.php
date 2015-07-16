@@ -20,6 +20,8 @@
         <li><a href="tareasadmin">Tareas</a></li>
 
         <li><a href="registrarproyecto">Nuevo Proyecto</a></li>
+
+        <li><a href="registrartarea">Nueva Tarea</a></li>
         
       </ul>
       
@@ -45,6 +47,10 @@
      @yield('muestratareas')
 
     @yield('registrarproyecto')
+
+    @yield('registrartarea')
+
+    @yield('editartarea')
   </div>
   </div>
 
