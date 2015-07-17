@@ -15,14 +15,14 @@
 
 @endif
 
-  <div class="panel-heading" >
+  <div class="panel-heading" id="tarea" >
     <h3 class="panel-title">Tarea : {{ $tarea->descripcion}}</h3>
   </div>
   <div class="panel-body">
     <b>Proyecto :</b> {{ $tarea->nombre}}<br>
     <b>Fecha de Entrega :</b> {{ $tarea->fechaEntrega}} <br>
     <b>Colaborador  :</b> {{ $tarea->nombre_usuario}} <br>
-    <b> Estado : </b> {{$tarea->estatus}} <br>
+    <b> Estado : </b> {{$tarea->estatus}} <br> <br>
 
      <a href="{{ url ('editartarea',$tarea->id_tarea) }}" class="btn btn-primary">
             Editar

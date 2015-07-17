@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use App\Usuario;
+use App\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,11 +28,14 @@ class UserTableSeeder extends Seeder {
  
     public function run()
     {
-        Usuario::create([
+        User::create([
  
-            'usuario'   => 'josealanrg',
-            'email'      => 'jose_cheypi@hotmail.com',
-            'password'   =>  Hash::make('123456')
+            'name'   => 'edder sanchez',
+            'email'      => 'edder_salo@hotmail.com',
+            'password'   =>  Hash::make('123456'),
+            'id_type'      => '1',
+
+
         ]);
     }
 

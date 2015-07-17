@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        {!! Form::open(['url' => 'homeadmin']) !!}
+        {!! Form::open(['url' => 'login/procesadatos']) !!}
 
             @if(Session::has('error_message'))
                 {!! Session::get('error_message') !!}

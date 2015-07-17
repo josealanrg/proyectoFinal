@@ -4,6 +4,7 @@ namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Cache;
 
 trait AuthenticatesUsers
@@ -103,7 +104,9 @@ trait AuthenticatesUsers
      */
     protected function getFailedLoginMessage()
     {
-        return 'Datos Incorrectos';
+        return Lang::has('auth.failed')
+                ? Lang::get('auth.failed')
+                : 'These credentials do not match our records.';
     }
 
     /**
@@ -115,7 +118,7 @@ trait AuthenticatesUsers
     {
         Auth::logout();
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : 'login');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 
     /**
@@ -135,7 +138,7 @@ trait AuthenticatesUsers
      */
     public function loginUsername()
     {
-        return property_exists($this, 'usuario') ? $this->usuario : 'email';
+        return property_exists($this, 'username') ? $this->username : 'email';
     }
 
     /**

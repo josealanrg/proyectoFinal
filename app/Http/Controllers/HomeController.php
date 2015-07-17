@@ -29,7 +29,11 @@ class HomeController extends Controller
     {
         return view('homeadmin');
     }
-
+public function getLogin()
+{
+    $usuarios=Usuario::all();
+    return View('login',compact('usuarios'));
+}
     /**
      * Show the form for creating a new resource.
      *
@@ -67,7 +71,7 @@ class HomeController extends Controller
     public function getColaboradores()
     {
         $colaboradores = DB::table('usuarios')->where('id_tipoUsuario','=','3')->get();
-        $ntareas = DB::table('tareas')->where('id_usuario','=','usuarios')->count();
+        $ntareas = DB::table('tareas')->where('id_usuario','=','$colaboradores->id_usuario')->count();
 
         return View::make('colaboradoresadmin',compact('colaboradores','ntareas'));
     }
@@ -148,7 +152,6 @@ class HomeController extends Controller
     $tareas = DB::table('tareas')->where('id_tarea',$id_tarea)->get();
 
 
-
    return View('editartarea',compact('tareas','proyectos','usuarios','estatus'));
 
 
@@ -158,6 +161,37 @@ class HomeController extends Controller
 
     public function updateTarea($id_tarea)
     {
-      
+        $tareas = Tarea::find($id_tarea);
+        $tareas->descripcion = Input::get('descripcion');
+        $tareas->fechaEntrega = Input::get('fechaEntrega');
+        $tareas->id_proyecto = Input::get('id_proyecto');
+        $tareas->id_usuario = Input::get('id_usuario');
+        $tareas->id_estatus = Input::get('id_estatus');
+        $tareas->save();
+
+      return redirect('tareasadmin')->with('notice','LA TAREA AH SIDO MODIFICADA CORRECTAMENTE');
+    }
+
+    public function validarUsuario()
+
+    {
+        $usuarios=Usuario::all($usuario);
+        $inputUsuario->usuario=$id_usuario->input('usuario');
+        $inputPassword->password=$id_usuario->input('password');
+
+        return view('homeadmin',compact('usuarios'));
+
+
+    }
+
+     public function destroyProyecto($id_proyecto)
+
+    {
+        Proyecto::destroy($id_proyecto);
+        
+        
+
+        return Redirect::to('homeadmin');
+
     }
 }
